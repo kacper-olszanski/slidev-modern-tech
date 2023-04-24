@@ -1,7 +1,97 @@
 :root {
-  // default theme color
-  // can be overrided by uses `themeConfig` option
-  --slidev-theme-primary: #5d8392;
+  --slidev-theme-primary: #712f90;
+  --slidev-theme-secondary: #2583ee;
+  --slidev-theme-accent: #01D393;
+  --bg: linear-gradient(120deg, var(--slidev-theme-secondary) 25%, var(--slidev-theme-primary) 75%);
+  --linear: linear-gradient(120deg, var(--slidev-theme-primary), var(--slidev-theme-secondary), var(--slidev-theme-accent));
+  --card-bg: white;
+  --card-color: #1b1b1b;
+  background-size: 100% 100%;
+  --fancy-gradient-position: 0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px;
+  --fancy-bg: radial-gradient(18% 28% at 70% 111%, var(--slidev-theme-primary) 6%, transparent 100%),radial-gradient(70% 53% at 36% 76%, var(--slidev-theme-secondary) 0%, transparent 100%),radial-gradient(42% 53% at 34% 72%, var(--slidev-theme-accent) 7%, transparent 100%),radial-gradient(18% 28% at 70% 93%, var(--slidev-theme-primary) 7%, transparent 100%),radial-gradient(31% 43% at 13% 89%, var(--slidev-theme-primary) 24%, transparent 100%),radial-gradient(21% 37% at 72% 23%, #6BF6CEFF 21%, transparent 100%),radial-gradient(35% 56% at 91% 74%, var(--slidev-theme-primary) 9%, transparent 100%),radial-gradient(74% 86% at 67% 22%, var(--slidev-theme-accent) 24%, transparent 100%),linear-gradient(125deg, var(--slidev-theme-secondary) 1%, var(--slidev-theme-primary) 100%);
+
+}
+
+.cover {
+  background: var(--card-bg);
+}
+
+.cover h1 {
+  font-weight: 700;
+  
+}
+
+.cover h1 {
+  background-image: var(--fancy-bg);
+  background-position: var(--fancy-gradient-position);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cover span,
+.cover svg,
+.cover h2,
+.cover h3,
+.cover p {
+  background-image: var(--linear);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+#slide-content,
+#slide-content.dark {
+  background-color: initial;
+  background-image: var(--fancy-bg);
+  background-position: var(--fancy-gradient-position);
+}
+
+
+.card {
+  background-color: var(--card-bg);
+  color: var(--card-color);
+  height: 100%;
+  padding: 1em 1.5em;
+  border-radius: 0.25em;
+}
+
+.image-right {
+  grid-column: span 3; 
+}
+
+.image-right-img {
+  grid-column: span 2; 
+
+}
+
+.card h1,
+.card h2,
+.card h3,
+.card h4,
+.card h5,
+.card h6
+ {
+  position: relative; 
+  margin-bottom: 0.5em;
+}
+.card h1:after,
+.card h2:after,
+.card h3:after,
+.card h4:after,
+.card h5:after,
+.card h6:after {
+  content : "";
+  position : absolute;
+  width : 2em;
+  height : 0.125em;
+  background: var(--linear);
+  border-radius: 0.05em;
+  bottom: -0.25em; 
+  left: 0.125em;
+}
+
+.slidev-layout {
+  padding: 2em 2em;
 }
 
 .slidev-layout.cover,
