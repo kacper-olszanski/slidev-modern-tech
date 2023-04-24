@@ -55,6 +55,14 @@ html.dark .cover:before {
   
 }
 
+p, pre, blockquote, figure, span, li, ul, ol {
+  font-size: 0.95em;
+}
+
+h1 {
+
+}
+
 footer {
   font-size: 0.5em;
   color: white;
