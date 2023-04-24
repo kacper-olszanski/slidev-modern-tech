@@ -1,6 +1,7 @@
 {
-  "name": "slidev-theme-slidev-modern-tech",
-  "version": "0.0.0",
+  "name": "slidev-theme-modern-tech",
+  "version": "0.0.1",
+  "repository": {"url": "https://github.com/kacper-olszanski/slidev-modern-tech"},
   "keywords": [
     "slidev-theme",
     "slidev"
@@ -24,14 +25,15 @@
   "devDependencies": {
     "@slidev/cli": "^0.40.14"
   },
-  "//": "Learn more: https://sli.dev/themes/write-a-theme.html",
   "slidev": {
     "colorSchema": "both",
     "highlighter": "all",
     "defaults": {
       "fonts": {
-        "sans": "Nunito Sans",
-        "mono": "Fira Code"
+        "serif": "Roboto Slab",
+        "sans": "Bernina Sans, Roboto",
+        "local": "Bernina Sans",
+        "mono": "Roboto Mono"
       },
       "hightlighter": "prism"
     }

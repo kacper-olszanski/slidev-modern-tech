@@ -1,5 +1,12 @@
 ---
 theme: ./
+#primary: '#712f90'
+#secondary: '#2583ee'
+#accent: '#01D393'
+bottomText: 'www.example.org'
+#colorSchema: 'dark'
+#logoFooter: ''
+#logoHeader: ''
 ---
 
 # Slidev Theme Starter

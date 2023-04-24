@@ -4,21 +4,60 @@
   --slidev-theme-accent: #01D393;
   --bg: linear-gradient(120deg, var(--slidev-theme-secondary) 25%, var(--slidev-theme-primary) 75%);
   --linear: linear-gradient(120deg, var(--slidev-theme-primary), var(--slidev-theme-secondary), var(--slidev-theme-accent));
-  --card-bg: white;
-  --card-color: #1b1b1b;
-  background-size: 100% 100%;
+  --bright-color: white;
+  --dark-color: #1b1b1b;
+  
   --fancy-gradient-position: 0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px;
   --fancy-bg: radial-gradient(18% 28% at 70% 111%, var(--slidev-theme-primary) 6%, transparent 100%),radial-gradient(70% 53% at 36% 76%, var(--slidev-theme-secondary) 0%, transparent 100%),radial-gradient(42% 53% at 34% 72%, var(--slidev-theme-accent) 7%, transparent 100%),radial-gradient(18% 28% at 70% 93%, var(--slidev-theme-primary) 7%, transparent 100%),radial-gradient(31% 43% at 13% 89%, var(--slidev-theme-primary) 24%, transparent 100%),radial-gradient(21% 37% at 72% 23%, #6BF6CEFF 21%, transparent 100%),radial-gradient(35% 56% at 91% 74%, var(--slidev-theme-primary) 9%, transparent 100%),radial-gradient(74% 86% at 67% 22%, var(--slidev-theme-accent) 24%, transparent 100%),linear-gradient(125deg, var(--slidev-theme-secondary) 1%, var(--slidev-theme-primary) 100%);
 
 }
+html:not(.dark) {
+  --card-bg: var(--bright-color);
+  --card-color: var(--dark-color);
+}
+
+html.dark {
+  --card-bg: var(--dark-color);
+  --card-color: var(--bright-color);
+}
+
+.slidev-page {
+  color: var(--bright-color);
+}
 
 .cover {
+  isolation: isolate;
+
+}
+html:not(.dark) .cover {
   background: var(--card-bg);
+}
+
+html.dark .cover {
+  backdrop-filter: blur(2em);
+}
+
+html.dark .cover:before {
+  background: var(--card-bg);
+  content: "";
+  position: absolute;
+  
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.85;
+  z-index: -1;
 }
 
 .cover h1 {
   font-weight: 700;
   
+}
+
+footer {
+  font-size: 0.5em;
+  color: white;
 }
 
 .cover h1 {
@@ -32,7 +71,7 @@
 .cover svg,
 .cover h2,
 .cover h3,
-.cover p {
+.cover p :not(.dark){
   background-image: var(--linear);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -46,13 +85,31 @@
   background-position: var(--fancy-gradient-position);
 }
 
+.card:before {
+
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  border-radius: 0.25em;
+  opacity: 0.75;
+  background-color: var(--card-bg);
+  z-index: -1;
+}
+
+html:not(.dark) .card:before {
+  opacity: 1;
+}
 
 .card {
-  background-color: var(--card-bg);
+  backdrop-filter: blur(2em);
   color: var(--card-color);
   height: 100%;
   padding: 1em 1.5em;
   border-radius: 0.25em;
+  isolation: isolate;
 }
 
 .image-right {
@@ -74,7 +131,16 @@
   position: relative; 
   margin-bottom: 0.5em;
 }
-.card h1:after,
+.card h1:after {
+  content : "";
+  position : absolute;
+  width : 2em;
+  height : 0.125em;
+  background: var(--linear);
+  border-radius: 0.05em;
+  bottom: -0.25em; 
+  left: 0.125em;
+}
 .card h2:after,
 .card h3:after,
 .card h4:after,
@@ -84,7 +150,7 @@
   position : absolute;
   width : 2em;
   height : 0.125em;
-  background: var(--linear);
+  background: var(--card-color);
   border-radius: 0.05em;
   bottom: -0.25em; 
   left: 0.125em;
