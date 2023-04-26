@@ -20,6 +20,7 @@
 .foot {
     display: flex;
     justify-content: space-between;
+    z-index: 10;
 }
 </style>
 <template>

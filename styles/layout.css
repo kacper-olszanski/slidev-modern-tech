@@ -116,6 +116,7 @@ html:not(.dark) .card:before {
   color: var(--card-color);
   height: 100%;
   padding: 1em 1.5em;
+  padding-top: 0.5em;
   border-radius: 0.25em;
   isolation: isolate;
 }
@@ -138,6 +139,8 @@ html:not(.dark) .card:before {
  {
   position: relative; 
   margin-bottom: 0.5em;
+  margin-top: 0.5em;
+
 }
 .card h1:after {
   content : "";
@@ -149,18 +152,27 @@ html:not(.dark) .card:before {
   bottom: -0.25em; 
   left: 0.125em;
 }
-.card h2:after,
+.card h2:after {
+  content : "";
+  position : absolute;
+  width : 2em;
+  height : 0.125em;
+  background: var(--linear);
+  border-radius: 0.05em;
+  bottom: -0.25em; 
+  left: 0.125em;
+}
 .card h3:after,
 .card h4:after,
 .card h5:after,
 .card h6:after {
   content : "";
   position : absolute;
-  width : 2em;
-  height : 0.125em;
+  width : 1em;
+  height : calc(0.125em / 2);
   background: var(--card-color);
   border-radius: 0.05em;
-  bottom: -0.25em; 
+  bottom: -0.125em; 
   left: 0.125em;
 }
 
